@@ -47,3 +47,36 @@ function playRound(compChoice, userChoice) {
         return 'No conditions met!'
     }
 }
+// plays a game of rock paper scissors for 5 rounds
+function game() {
+    let computerScore = 0;
+    let playerScore = 0;
+    let result;
+
+    for (let i = 0; i < 5; i++) { // iterates 5 times to simulate 5 rounds
+        result = playRound(getComputerChoice(), playerSelection()); // Stores result string from playRound()
+        if (result.includes('win')) { // Uses includes() string method to determine where to add a point
+            playerScore++;
+            console.log(`Computer: ${computerScore} | Player: ${playerScore}`);
+        } else if (result.includes('lose')) {
+            computerScore++;
+            console.log(`Computer: ${computerScore} | Player: ${playerScore}`);
+        } else {
+            console.log('Tie!')
+        }
+    }
+    return (playerScore === computerScore) ? `It's a tie! Play again?` : (playerScore > computerScore) ? 'You win! Play again?' : (playerScore < computerScore) ? 'You lose! Play again?' : 'Oops! Error!';
+    /*
+    Line 68 same as:
+
+    if (playerScore === computerScore) {
+        return 'Tie!';
+    } else if (playerScore > computerScore) {
+        return 'Win!';
+    } else if (playerScore < computerScore) {
+        return 'Lose!';
+    } else {
+        return 'Oops';
+    }
+    */
+}
