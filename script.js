@@ -66,17 +66,4 @@ function game() {
     }
     // }
     return (playerScore === computerScore) ? `It's a tie! Play again?` : (playerScore > computerScore) ? 'You win! Play again?' : (playerScore < computerScore) ? 'You lose! Play again?' : 'Oops! Error!';
-    /*
-    Line 68 same as:
-
-    if (playerScore === computerScore) {
-        return 'Tie!';
-    } else if (playerScore > computerScore) {
-        return 'Win!';
-    } else if (playerScore < computerScore) {
-        return 'Lose!';
-    } else {
-        return 'Oops';
-    }
-    */
 }
