@@ -26,7 +26,7 @@ function getRandomInt(min, max) {
 
 function playRound(event) {
     let userChoice = playerSelection(event);
-    let compChoice;
+    let compChoice = getComputerChoice();;
     // Tie condition
     console.log(`Computer Choice: ${compChoice}`);
     console.log(`Your Choice: ${userChoice}`);
