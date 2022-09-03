@@ -1,8 +1,14 @@
 // asks the user for their selection and returns their input
-function playerSelection() {
-    let choice;
-    choice = prompt("Pick rock, paper, or scissors: "); // stores user input in choice
-    return choice.toLowerCase(); // return user input in all lowercase making it case-insensitive
+function playerSelection(event) {
+    if (event.target.id === 'rock-btn') {
+        return 'rock';
+    }
+    if (event.target.id === 'paper-btn') {
+        return 'paper';
+    }
+    if (event.target.id === 'scissors-btn') {
+        return 'scissors';
+    }
 }
 // generates the choice of the computer
 function getComputerChoice() {
@@ -18,7 +24,9 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min); // generates a number from min - max (inclusive)
 }
 
-function playRound(compChoice, userChoice) {
+function playRound(event) {
+    let userChoice = playerSelection(event);
+    let compChoice;
     // Tie condition
     console.log(`Computer Choice: ${compChoice}`);
     console.log(`Your Choice: ${userChoice}`);
@@ -67,3 +75,17 @@ function game() {
     // }
     return (playerScore === computerScore) ? `It's a tie! Play again?` : (playerScore > computerScore) ? 'You win! Play again?' : (playerScore < computerScore) ? 'You lose! Play again?' : 'Oops! Error!';
 }
+
+const rockBtn = document.querySelector('#rock-btn');
+const paperBtn = document.querySelector('#paper-btn');
+const scissorsBtn = document.querySelector('#scissors-btn');
+
+rockBtn.addEventListener('click', (e) => {
+    playRound(e);
+});
+paperBtn.addEventListener('click', (e) => {
+    playRound(e);
+});
+scissorsBtn.addEventListener('click', (e) => {
+    playRound(e);
+});
