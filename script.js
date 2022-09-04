@@ -1,5 +1,5 @@
-// asks the user for their selection and returns their input
-function playerSelection(event) {
+// Takes an event and returns the choice
+function playerSelection(event) { // Event is processed here
     if (event.target.id === 'rock-btn') {
         return 'rock';
     }
@@ -28,7 +28,7 @@ function playRound(event) {
     const resultDiv = document.querySelector('#result');
     const playerChoiceDiv = document.querySelector('#player-choice');
     const computerChoiceDiv = document.querySelector('#comp-choice');
-    let userChoice = playerSelection(event);
+    let userChoice = playerSelection(event); // Passes event to playerSelection and stores the result here
     let compChoice = getComputerChoice();
 
     computerChoiceDiv.textContent = `Computer Choice: ${compChoice}`;
@@ -60,10 +60,12 @@ function playRound(event) {
     }
 }
 
+// Selects each button choice
 const rockBtn = document.querySelector('#rock-btn');
 const paperBtn = document.querySelector('#paper-btn');
 const scissorsBtn = document.querySelector('#scissors-btn');
 
+// Adds an event listener that passes the event to playRound()
 rockBtn.addEventListener('click', (e) => {
     playRound(e);
 });
