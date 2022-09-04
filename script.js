@@ -39,26 +39,35 @@ function playRound(event) {
         // Win conditions
     } else if (userChoice === 'rock' && compChoice === 'scissors') {
         resultDiv.textContent = 'Result: You win! Rock beats scissors.';
-
+        playerScore++;
     } else if (userChoice === 'paper' && compChoice === 'rock') {
         resultDiv.textContent = 'Result: You win! Paper beats rock.';
-
+        playerScore++;
     } else if (userChoice === 'scissors' && compChoice === 'paper') {
         resultDiv.textContent = 'Result: You win! Scissors beats paper.';
+        playerScore++;
         // Lose conditions
     } else if (compChoice === 'scissors' && userChoice === 'paper') {
         resultDiv.textContent = 'Result: You lose! Scissors beats paper.';
-
+        computerScore++;
     } else if (compChoice === 'rock' && userChoice === 'scissors') {
         resultDiv.textContent = 'Result: You lose! Rock beats scissors.';
-
+        computerScore++;
     } else if (compChoice === 'paper' && userChoice === 'rock') {
         resultDiv.textContent = 'Result: You lose! Paper beats rock.';
+        computerScore++;
         // No condition
     } else {
         resultDiv.textContent = 'Result: No conditions met!'
     }
+
+    if (computerScore === 5 || playerScore === 5) {
+        console.log('Done!') // TODO: function reset scores and game
+    }
 }
+
+let computerScore = 0;
+let playerScore = 0;
 
 // Selects each button choice
 const rockBtn = document.querySelector('#rock-btn');
