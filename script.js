@@ -78,6 +78,12 @@ function playRound(event) {
         rockBtn.removeEventListener('click', initiateRound);
         paperBtn.removeEventListener('click', initiateRound);
         scissorsBtn.removeEventListener('click', initiateRound);
+
+        if (computerScore < playerScore) {
+            resultDiv.textContent = 'You Won! Click the reset button to play again.';
+        } else {
+            resultDiv.textContent = 'You lost. Click the reset button to play again';
+        }
     }
 }
 
