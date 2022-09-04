@@ -75,13 +75,21 @@ function playRound(event) {
     }
 
     if (computerScore === 5 || playerScore === 5) {
-        console.log('Done!') // TODO: function reset scores and game
+        rockBtn.removeEventListener('click', initiateRound);
+        paperBtn.removeEventListener('click', initiateRound);
+        scissorsBtn.removeEventListener('click', initiateRound);
     }
 }
 
 function updateScore() {
     playerScoreDiv.textContent = `Player Score: ${playerScore}`;
     computerScoreDiv.textContent = `Computer Score: ${computerScore}`;
+}
+const resetButton = document.querySelector('#reset-button');
+resetButton.addEventListener('click', resetGame);
+
+function resetGame() {
+    window.location.reload();
 }
 
 const playerScoreDiv = document.querySelector('#player-score');
@@ -96,12 +104,10 @@ const paperBtn = document.querySelector('#paper-btn');
 const scissorsBtn = document.querySelector('#scissors-btn');
 
 // Adds an event listener that passes the event to playRound()
-rockBtn.addEventListener('click', (e) => {
+function initiateRound(e) {
     playRound(e);
-});
-paperBtn.addEventListener('click', (e) => {
-    playRound(e);
-});
-scissorsBtn.addEventListener('click', (e) => {
-    playRound(e);
-});
+}
+
+rockBtn.addEventListener('click', initiateRound);
+paperBtn.addEventListener('click', initiateRound);
+scissorsBtn.addEventListener('click', initiateRound);
