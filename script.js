@@ -36,26 +36,39 @@ function playRound(event) {
     // Tie condition
     if (compChoice === userChoice) {
         resultDiv.textContent = 'It\'s a tie!';
+
         // Win conditions
     } else if (userChoice === 'rock' && compChoice === 'scissors') {
         resultDiv.textContent = 'Result: You win! Rock beats scissors.';
         playerScore++;
+        updateScore();
+
     } else if (userChoice === 'paper' && compChoice === 'rock') {
         resultDiv.textContent = 'Result: You win! Paper beats rock.';
         playerScore++;
+        updateScore();
+
     } else if (userChoice === 'scissors' && compChoice === 'paper') {
         resultDiv.textContent = 'Result: You win! Scissors beats paper.';
         playerScore++;
+        updateScore();
+
         // Lose conditions
     } else if (compChoice === 'scissors' && userChoice === 'paper') {
         resultDiv.textContent = 'Result: You lose! Scissors beats paper.';
         computerScore++;
+        updateScore();
+
     } else if (compChoice === 'rock' && userChoice === 'scissors') {
         resultDiv.textContent = 'Result: You lose! Rock beats scissors.';
         computerScore++;
+        updateScore();
+
     } else if (compChoice === 'paper' && userChoice === 'rock') {
         resultDiv.textContent = 'Result: You lose! Paper beats rock.';
         computerScore++;
+        updateScore();
+
         // No condition
     } else {
         resultDiv.textContent = 'Result: No conditions met!'
@@ -65,6 +78,14 @@ function playRound(event) {
         console.log('Done!') // TODO: function reset scores and game
     }
 }
+
+function updateScore() {
+    playerScoreDiv.textContent = `Player Score: ${playerScore}`;
+    computerScoreDiv.textContent = `Computer Score: ${computerScore}`;
+}
+
+const playerScoreDiv = document.querySelector('#player-score');
+const computerScoreDiv = document.querySelector('#comp-score');
 
 let computerScore = 0;
 let playerScore = 0;
