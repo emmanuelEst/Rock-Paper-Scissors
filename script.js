@@ -25,81 +25,66 @@ function getRandomInt(min, max) {
 }
 
 function playRound(event) {
-    const resultDiv = document.querySelector('#result');
-    const playerChoiceDiv = document.querySelector('#player-choice');
-    const computerChoiceDiv = document.querySelector('#comp-choice');
+    // const resultDiv = document.querySelector('#result');
     let userChoice = playerSelection(event); // Passes event to playerSelection and stores the result here
     let compChoice = getComputerChoice();
 
-    computerChoiceDiv.textContent = `Computer Choice: ${compChoice}`;
-    playerChoiceDiv.textContent = `Player Choice: ${userChoice}`;
     // Tie condition
     if (compChoice === userChoice) {
-        resultDiv.textContent = 'It\'s a tie!';
 
         // Win conditions
     } else if (userChoice === 'rock' && compChoice === 'scissors') {
-        resultDiv.textContent = 'Result: You win! Rock beats scissors.';
         playerScore++;
         updateScore();
 
     } else if (userChoice === 'paper' && compChoice === 'rock') {
-        resultDiv.textContent = 'Result: You win! Paper beats rock.';
         playerScore++;
         updateScore();
 
     } else if (userChoice === 'scissors' && compChoice === 'paper') {
-        resultDiv.textContent = 'Result: You win! Scissors beats paper.';
         playerScore++;
         updateScore();
 
         // Lose conditions
     } else if (compChoice === 'scissors' && userChoice === 'paper') {
-        resultDiv.textContent = 'Result: You lose! Scissors beats paper.';
         computerScore++;
         updateScore();
 
     } else if (compChoice === 'rock' && userChoice === 'scissors') {
-        resultDiv.textContent = 'Result: You lose! Rock beats scissors.';
         computerScore++;
         updateScore();
 
     } else if (compChoice === 'paper' && userChoice === 'rock') {
-        resultDiv.textContent = 'Result: You lose! Paper beats rock.';
         computerScore++;
         updateScore();
 
         // No condition
     } else {
-        resultDiv.textContent = 'Result: No conditions met!'
     }
 
     if (computerScore === 5 || playerScore === 5) {
         rockBtn.removeEventListener('click', initiateRound);
         paperBtn.removeEventListener('click', initiateRound);
         scissorsBtn.removeEventListener('click', initiateRound);
+        console.log('Done!')
 
         if (computerScore < playerScore) {
-            resultDiv.textContent = 'You Won! Click the reset button to play again.';
+            // resultDiv.textContent = 'You Won! Click the reset button to play again.';
         } else {
-            resultDiv.textContent = 'You lost. Click the reset button to play again';
+            // resultDiv.textContent = 'You lost. Click the reset button to play again';
         }
     }
 }
 
 function updateScore() {
-    playerScoreDiv.textContent = `Player Score: ${playerScore}`;
-    computerScoreDiv.textContent = `Computer Score: ${computerScore}`;
+
 }
-const resetButton = document.querySelector('#reset-button');
+const resetButton = document.querySelector('#reset-btn');
 resetButton.addEventListener('click', resetGame);
 
 function resetGame() {
     window.location.reload();
 }
-
-const playerScoreDiv = document.querySelector('#player-score');
-const computerScoreDiv = document.querySelector('#comp-score');
 
 let computerScore = 0;
 let playerScore = 0;
