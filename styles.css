@@ -79,6 +79,22 @@ body {
     border-radius: 20px;
 }
 
+/* Result Messages */
+#results-click-rock,
+#results-click-paper,
+#results-click-scissors {
+    max-width: 250px;
+
+    margin-top: 10px;
+
+    color: #fff;
+    font-size: 12px;
+    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    line-height: 15px;
+
+    text-align: center;
+}
+
 #score-board,
 #player-box,
 #computer-box {
