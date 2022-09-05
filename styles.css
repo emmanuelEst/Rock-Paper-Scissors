@@ -1,3 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 html {
     background-color: #232946;
+    margin: 0;
+}
+
+body {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#banner {
+    background-color: #fff;
+
+    margin-top: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+
+    box-shadow: 1px 3px 10px white;
+    border: solid 2px black;
+    outline: solid 3px black;
+    outline-offset: -7px;
+
+
+}
+
+#banner,
+#game-info {
+    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#game-info {
+    color: #fff;
+    font-size: 16px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
