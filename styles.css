@@ -123,6 +123,14 @@ body {
     font-size: 12px;
 }
 
+#play-score-number,
+#comp-score-number {
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
 #content {
     display: flex;
     flex-direction: column;

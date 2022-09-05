@@ -89,9 +89,12 @@ function playRound(event) {
         }
     }
 }
+const playerScoreDiv = document.querySelector('#play-score-number');
+const computerScoreDiv = document.querySelector('#comp-score-number');
 
 function updateScore() {
-
+    playerScoreDiv.textContent = `${playerScore}`;
+    computerScoreDiv.textContent = `${computerScore}`;
 }
 const resetButton = document.querySelector('#reset-btn');
 resetButton.addEventListener('click', resetGame);
