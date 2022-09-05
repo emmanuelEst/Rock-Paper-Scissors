@@ -12,14 +12,13 @@ body {
 }
 
 .eight-bit-ui {
+    background-color: #fff;
     border: solid 2px black;
     outline: solid 3px black;
     outline-offset: -7px;
 }
 
 #banner {
-    background-color: #fff;
-
     margin-top: 0px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -71,4 +70,32 @@ body {
     font-size: 24px;
 
     border-radius: 20px;
+}
+
+#score-board,
+#player-box,
+#computer-box {
+    display: flex;
+}
+
+#player-box,
+#computer-box {
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#score-board {
+    margin-top: 50px;
+
+    justify-content: center;
+    column-gap: 150px;
+}
+
+#player-score-text,
+#computer-score-text {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    font-size: 12px;
 }
