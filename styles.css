@@ -20,6 +20,7 @@ body {
 
 .buttons:hover {
     background-color: rgb(230, 230, 230);
+    cursor: pointer;
 }
 
 #banner {
@@ -155,4 +156,5 @@ body {
 
 #reset-btn:hover {
     background-color: #c50027;
+    cursor: pointer;
 }
