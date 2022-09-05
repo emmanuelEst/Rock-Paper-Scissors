@@ -99,3 +99,15 @@ body {
     font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
     font-size: 12px;
 }
+
+#content {
+    display: flex;
+    flex-direction: column;
+}
+
+#reset-btn {
+    margin-top: 60px;
+    align-self: center;
+
+    padding: 10px 30px;
+}
