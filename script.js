@@ -25,38 +25,52 @@ function getRandomInt(min, max) {
 }
 
 function playRound(event) {
-    // const resultDiv = document.querySelector('#result');
     let userChoice = playerSelection(event); // Passes event to playerSelection and stores the result here
     let compChoice = getComputerChoice();
+    const paperResultDiv = document.querySelector('#results-click-paper');
+    const rockResultDiv = document.querySelector('#results-click-rock');
+    const scissorsResultDiv = document.querySelector('#results-click-scissors');
+
+    // Resets text content to empty only displaying one result message at a time
+    paperResultDiv.textContent = '';
+    rockResultDiv.textContent = '';
+    scissorsResultDiv.textContent = '';
 
     // Tie condition
     if (compChoice === userChoice) {
+        paperResultDiv.textContent = 'It\'s a tie!';
 
         // Win conditions
     } else if (userChoice === 'rock' && compChoice === 'scissors') {
         playerScore++;
         updateScore();
+        rockResultDiv.textContent = 'You win! Rock beats scissors.';
 
     } else if (userChoice === 'paper' && compChoice === 'rock') {
         playerScore++;
         updateScore();
+        paperResultDiv.textContent = 'You win! Paper beats rock.';
 
     } else if (userChoice === 'scissors' && compChoice === 'paper') {
         playerScore++;
         updateScore();
+        scissorsResultDiv.textContent = 'You win! Scissors beats paper.';
 
         // Lose conditions
     } else if (compChoice === 'scissors' && userChoice === 'paper') {
         computerScore++;
         updateScore();
+        paperResultDiv.textContent = 'You lost! Paper does not beat scissors.'
 
     } else if (compChoice === 'rock' && userChoice === 'scissors') {
         computerScore++;
         updateScore();
+        scissorsResultDiv.textContent = 'You lost! Scissors does not beat rock.'
 
     } else if (compChoice === 'paper' && userChoice === 'rock') {
         computerScore++;
         updateScore();
+        rockResultDiv.textContent = 'You lost! Rock does not beat paper.'
 
         // No condition
     } else {
@@ -69,9 +83,9 @@ function playRound(event) {
         console.log('Done!')
 
         if (computerScore < playerScore) {
-            // resultDiv.textContent = 'You Won! Click the reset button to play again.';
+
         } else {
-            // resultDiv.textContent = 'You lost. Click the reset button to play again';
+
         }
     }
 }
