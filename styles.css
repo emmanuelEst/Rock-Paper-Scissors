@@ -142,5 +142,17 @@ body {
 
     padding: 10px 30px;
 
+    border: solid 2px #fff;
+    outline: none;
     border-radius: 10px;
+
+    background-color: #FF0035;
+    color: #fff;
+
+    font-size: 14px;
+    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+}
+
+#reset-btn:hover {
+    background-color: #c50027;
 }
