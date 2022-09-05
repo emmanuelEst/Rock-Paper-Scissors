@@ -18,6 +18,10 @@ body {
     outline-offset: -7px;
 }
 
+.buttons:hover {
+    background-color: rgb(230, 230, 230);
+}
+
 #banner {
     margin-top: 0px;
     padding-top: 20px;
@@ -40,9 +44,9 @@ body {
     font-size: 16px;
     margin-top: 25px;
     margin-bottom: 25px;
-    margin-left: 400px;
-    margin-right: 400px;
+    max-width: 640px;
     line-height: 30px;
+    align-self: center;
 }
 
 /* Choice button styles */
@@ -67,7 +71,7 @@ body {
 
 .input-buttons {
     width: 250px;
-    height: 250px;
+    height: 200px;
 
     font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
     font-size: 24px;
@@ -113,4 +117,6 @@ body {
     align-self: center;
 
     padding: 10px 30px;
+
+    border-radius: 10px;
 }
