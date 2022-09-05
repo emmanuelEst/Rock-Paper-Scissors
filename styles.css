@@ -11,6 +11,12 @@ body {
     margin-right: 0px;
 }
 
+.eight-bit-ui {
+    border: solid 2px black;
+    outline: solid 3px black;
+    outline-offset: -7px;
+}
+
 #banner {
     background-color: #fff;
 
@@ -21,10 +27,6 @@ body {
     font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
 
     box-shadow: 1px 3px 10px white;
-    border: solid 2px black;
-    outline: solid 3px black;
-    outline-offset: -7px;
-
 
 }
 
@@ -69,8 +71,4 @@ body {
     font-size: 24px;
 
     border-radius: 20px;
-    border: solid 2px black;
-    outline: solid 3px black;
-    outline-offset: -7px;
-
 }
