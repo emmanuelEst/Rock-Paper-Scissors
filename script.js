@@ -83,12 +83,13 @@ function playRound(event) {
         console.log('Done!')
 
         if (computerScore < playerScore) {
-
+            gameOverMessage('win');
         } else {
-
+            gameOverMessage('');
         }
     }
 }
+
 const playerScoreDiv = document.querySelector('#play-score-number');
 const computerScoreDiv = document.querySelector('#comp-score-number');
 
@@ -96,6 +97,18 @@ function updateScore() {
     playerScoreDiv.textContent = `${playerScore}`;
     computerScoreDiv.textContent = `${computerScore}`;
 }
+// Game over message
+const gameInfo = document.querySelector('#game-info');
+function gameOverMessage(win) {
+    if (win === 'win') {
+        gameInfo.textContent = 'Congrats! You beat the computer. Click the reset button at the bottom to play again.'
+        gameInfo.style.cssText = 'color: #fff; background-color: #61E786; border: solid #fff 3px;'
+    } else {
+        gameInfo.textContent = 'You lost. Try again by clicking the reset button at the bottom.'
+        gameInfo.style.cssText = 'color: #fff; background-color: #FF0035; border: solid #fff 3px'
+    }
+}
+
 const resetButton = document.querySelector('#reset-btn');
 resetButton.addEventListener('click', resetGame);
 
