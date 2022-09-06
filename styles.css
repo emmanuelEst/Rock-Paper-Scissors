@@ -5,6 +5,17 @@ html {
     margin: 0;
 }
 
+:root {
+    --snow: #FFFBFC;
+    --black: #000;
+    --imperialRed: #FF0035;
+    --lightGreen: #61E786;
+    --blueJeans: #5DA9E9;
+    --spaceCadet: #232946;
+
+    --font: 'Press Start 2P', 'Courier New', Courier, monospace;
+}
+
 body {
     margin-top: 0px;
     margin-left: 0px;
@@ -12,9 +23,9 @@ body {
 }
 
 .eight-bit-ui {
-    background-color: #fff;
-    border: solid 2px black;
-    outline: solid 3px black;
+    background-color: var(--snow);
+    border: solid 2px var(--black);
+    outline: solid 3px var(--black);
     outline-offset: -7px;
 }
 
@@ -28,7 +39,7 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
 
-    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    font-family: var(--font);
 
     box-shadow: 1px 3px 10px white;
 
@@ -36,12 +47,12 @@ body {
 
 #banner,
 #game-info {
-    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    font-family: var(--font);
     text-align: center;
 }
 
 #game-info {
-    color: #fff;
+    color: var(--snow);
     font-size: 16px;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -74,7 +85,7 @@ body {
     width: 250px;
     height: 200px;
 
-    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    font-family: var(--font);
     font-size: 24px;
 
     border-radius: 20px;
@@ -90,7 +101,7 @@ body {
 
     color: #fff;
     font-size: 12px;
-    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    font-family: var(--font);
     line-height: 15px;
 
     text-align: center;
@@ -120,7 +131,7 @@ body {
 #computer-score-text {
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    font-family: var(--font);
     font-size: 12px;
 }
 
@@ -128,7 +139,7 @@ body {
 #comp-score-number {
     margin-top: 10px;
     font-size: 14px;
-    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    font-family: var(--font);
     text-align: center;
 }
 
@@ -143,15 +154,15 @@ body {
 
     padding: 10px 30px;
 
-    border: solid 2px #fff;
+    border: solid 2px var(--snow);
     outline: none;
     border-radius: 10px;
 
-    background-color: #FF0035;
-    color: #fff;
+    background-color: var(--imperialRed);
+    color: var(--snow);
 
     font-size: 14px;
-    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    font-family: var(--font);
 }
 
 #reset-btn:hover {
